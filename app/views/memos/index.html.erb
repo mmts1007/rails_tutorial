@@ -16,8 +16,13 @@
       <tr>
         <td><%= memo.title %></td>
         <td><%= memo.body %></td>
+        <!-- link_to メソッドは引数に渡したパラメータからリンクタグを生成する -->
         <td><%= link_to 'Show', memo %></td>
+        <!-- edit_memo_path メソッドは編集画面のリンクタグを生成 -->
         <td><%= link_to 'Edit', edit_memo_path(memo) %></td>
+        <!-- 削除用のリンクタグを生成 -->
+        <!-- 削除は HTTPのメソッドが deleteとなっているため method パラメータに deleteを指定 -->
+        <!-- comfirm パラメータにメッセージを指定することで、指定したメッセージがAlertで表示される -->
         <td><%= link_to 'Destroy', memo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
